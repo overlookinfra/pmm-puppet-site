@@ -1,49 +1,5 @@
 ---
 rgbank:
-  production:
-    components:
-      Rgbank::Web:
-        query: "inventory[certname] {
-          facts.trusted.extensions.pp_application = \"rgbank\" and
-          facts.trusted.extensions.pp_environment = \"production\" and
-          facts.trusted.extensions.pp_apptier = \"web\" and
-          nodes { deactivated is null } }"
-      Rgbank::Db:
-        query: "inventory[certname] {
-          facts.trusted.extensions.pp_application = \"rgbank\" and
-          facts.trusted.extensions.pp_environment = \"production\" and
-          facts.trusted.extensions.pp_apptier = \"database\" and 
-          nodes { deactivated is null } }"
-      Rgbank::Load:
-        query: "inventory[certname] {
-          facts.trusted.extensions.pp_application = \"rgbank\" and
-          facts.trusted.extensions.pp_environment = \"production\" and
-          facts.trusted.extensions.pp_apptier = \"loadbalancer\" and
-          nodes { deactivated is null } }"
-  staging:
-    parameters:
-      db_username: 'staginguser'
-      db_password: 'myawesomepassword'
-      use_docker: true
-    components:
-      Rgbank::Web:
-        query: "inventory[certname] {
-          facts.trusted.extensions.pp_application = \"rgbank\" and
-          facts.trusted.extensions.pp_environment = \"staging\" and
-          facts.trusted.extensions.pp_apptier = \"web\" and
-          nodes { deactivated is null } }"
-      Rgbank::Db:
-        query: "inventory[certname] {
-          facts.trusted.extensions.pp_application = \"rgbank\" and
-          facts.trusted.extensions.pp_environment = \"staging\" and
-          facts.trusted.extensions.pp_apptier = \"database\" and
-          nodes { deactivated is null } }"
-      Rgbank::Load:
-        query: "inventory[certname] {
-          facts.trusted.extensions.pp_application = \"rgbank\" and
-          facts.trusted.extensions.pp_environment = \"staging\" and
-          facts.trusted.extensions.pp_apptier = \"loadbalancer\" and
-          nodes { deactivated is null } }"
   dev_aws:
     components:
       Rgbank::Web:
