@@ -47,7 +47,7 @@ mod 'rgbank',
   :git => 'http://github.com/puppetlabs/puppetlabs-rgbank.git'
 
 mod 'hiera_jenkins',
-  :git => 'http://gitlab.inf.puppet.vm/rgbank/puppetlabs-hiera_jenkins.git'
+  :git => 'http://github.com/puppetlabs/puppetlabs-hiera_jenkins.git'
 
 # Community Modules
 mod 'stahnma/epel', '1.0.0'
