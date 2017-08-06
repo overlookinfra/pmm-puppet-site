@@ -26,12 +26,12 @@ pipeline {
       }
     }
 
-    //stage("Release To QA"){
-    //  when { branch "production" }
-    //  steps {
-    //    puppetJob(environment: 'production', query: 'inventory[certname] { trusted.extensions.pp_environment = "staging" and nodes { deactivated is null } }', credentialsId: 'pe-access-token')
-    //  }
-    //}
+    stage("Release To QA"){
+      when { branch "production" }
+      steps {
+        puppetJob(environment: 'production', query: 'inventory[certname] { trusted.extensions.pp_environment = "staging" and nodes { deactivated is null } }', credentialsId: 'pe-access-token')
+      }
+    }
 
     stage("Release To Production"){
       when { branch "production" }
