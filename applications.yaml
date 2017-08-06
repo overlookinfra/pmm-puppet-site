@@ -44,18 +44,4 @@ rgbank:
           facts.trusted.extensions.pp_environment = \"staging\" and
           facts.trusted.extensions.pp_apptier = \"loadbalancer\" and
           nodes { deactivated is null } }"
-  dev_aws:
-    components:
-      Rgbank::Web:
-        query: "inventory[certname] {
-          facts.trusted.extensions.pp_application = \"rgbank\" and
-          facts.trusted.extensions.pp_environment = \"staging\" and
-          facts.trusted.extensions.pp_apptier = \"all\" and
-          nodes { deactivated is null } }"
-      Rgbank::Db:
-        query: "inventory[certname] {
-          facts.trusted.extensions.pp_application = \"rgbank\" and
-          facts.trusted.extensions.pp_environment = \"staging\" and
-          facts.trusted.extensions.pp_apptier = \"all\" and
-          nodes { deactivated is null } }"
 
