@@ -1,7 +1,7 @@
 class profile::docker::demo {
   docker::image { 'redis': }
 
-  docker::run { 'helloworld':
+  docker::run { 'redis':
     image =>  'redis',
   }
 }
