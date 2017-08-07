@@ -9,7 +9,7 @@ class profile::demo::httpd {
     ensure => installed,
   }
   
-  file { '/var/www/hi.html':
+  file { '/var/www/html/hi.html':
     ensure  => file,
     content => "<h1>Hello Forrester</h1>",
     mode    => '0644',
