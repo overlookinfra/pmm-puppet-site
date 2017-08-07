@@ -44,11 +44,10 @@ mod 'app_modeling',
   :git => 'https://github.com/puppetlabs/puppetlabs-app_modeling'
 
 mod 'rgbank',
-  :git => 'http://gitlab.inf.puppet.vm/rgbank/puppetlabs-rgbank.git',
-  :ref => '365eccb666e5b31886dbd0b9377aa09fbe87dcf6'
+  :git => 'http://github.com/puppetlabs/puppetlabs-rgbank.git'
 
 mod 'hiera_jenkins',
-  :git => 'http://gitlab.inf.puppet.vm/rgbank/puppetlabs-hiera_jenkins.git'
+  :git => 'http://github.com/puppetlabs/hiera_jenkins.git'
 
 # Community Modules
 mod 'stahnma/epel', '1.0.0'
