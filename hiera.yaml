@@ -31,5 +31,8 @@ hierarchy:
   - name: "Per-OS defaults"
     path: "os/%{facts.os.family}.yaml"
 
+  - name: "Per-Host defaults"
+    path: "nodes/%{trusted.certname}.yaml"
+
   - name: "Common data"
     path: "common.yaml"

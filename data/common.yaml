@@ -30,3 +30,5 @@ profile::windows::join_domain::domain_name: 'internal.local'
 profile::windows::join_domain::domain_join_username: 'svc-joindomain@internal.local'
 profile::windows::join_domain::domain_join_password: 'Puppet456'
 profile::windows::join_domain::domain_join_ou: 'OU=Servers,DC=internal,DC=local'
+
+apache::service_enable: true
