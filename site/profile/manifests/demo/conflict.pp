@@ -1,5 +1,5 @@
-class profile::apache::conflict {
+class profile::demo::conflict {
   package { 'apache2':
-    ensure => absent,
+    ensure => uninstalled,
   }
 }
