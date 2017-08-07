@@ -13,6 +13,6 @@ class profile::demo::httpd {
     ensure  => file,
     content => "<h1>Hello Forrester</h1>",
     mode    => '0644',
-    require => Package['apache'],
+    require => Package['apache2'],
   }
 } 
