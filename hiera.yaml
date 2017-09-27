@@ -15,6 +15,9 @@ hierarchy:
   - name: "Per-node data"
     path: "nodes/%{trusted.certname}.yaml"
 
+  - name: "Kubernetes Configurations"
+    path: "kubernetes.yaml"
+
   - name: "Per-datacenter business group data"
     path: "datacenter/%{trusted.extensions.pp_datacenter}.yaml"
 
