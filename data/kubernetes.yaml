@@ -313,9 +313,9 @@ kubernetes::bootstrap_token_expiration: MjAyNy0wMy0xMFQwMzoyMjoxMVoNCg==
 kubernetes::bootstrap_token_usage_bootstrap_authentication: dHJ1ZQ==
 kubernetes::bootstrap_token_usage_bootstrap_signing: dHJ1ZQ==
 
-kubernetes::kubernetes_fqdn: 10-32-175-154.rfc1918.puppetlabs.net
-kubernetes::bootstrap_controller_ip: 10.32.175.154
-kubernetes::etcd_initial_cluster: etcd-kube-master=http://10.32.175.154:2380
+kubernetes::kubernetes_fqdn: 10-32-161-83.rfc1918.puppetlabs.net
+kubernetes::bootstrap_controller_ip: 10.32.161.83
+kubernetes::etcd_initial_cluster: etcd-kube-master=http://10.32.161.83:2380
 kubernetes::etcd_ip: "%{::ipaddress_eth0}"
 kubernetes::kube_api_advertise_address: "%{::ipaddress_eth0}"
 kubernetes::install_dashboard: true
