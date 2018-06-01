@@ -49,6 +49,9 @@ mod 'rgbank',
 mod 'hiera_jenkins',
   :git => 'http://github.com/puppetlabs/hiera_jenkins.git'
 
+mod 'cd4pe',
+  :git => 'https://github.com/puppetlabs/puppetlabs-cd4pe.git'
+
 # Community Modules
 mod 'stahnma/epel', '1.0.0'
 mod 'puppet/nginx', '0.6.0'
