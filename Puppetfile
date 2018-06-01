@@ -49,7 +49,7 @@ mod 'rgbank',
 mod 'hiera_jenkins',
   :git => 'http://github.com/puppetlabs/hiera_jenkins.git'
 
-mod 'cd4pe',
+mod 'cdpe',
   :git => 'https://github.com/puppetlabs/puppetlabs-cd4pe.git'
 
 # Community Modules
