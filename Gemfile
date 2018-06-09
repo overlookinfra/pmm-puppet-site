@@ -20,4 +20,3 @@ gem 'rspec-puppet-facts'
 gem 'onceover'
 gem 'hiera-eyaml'
 gem 'pdk'
-
