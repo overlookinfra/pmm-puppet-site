@@ -7,7 +7,7 @@ class role::rgbank::web(
   include profile::nginx
   include profile::mysql::client
   include profile::git
-  
+ 
   Class['profile::common'] -> Class['profile::nginx']
   Class['profile::apache::remove'] -> Class['profile::nginx']
 }
