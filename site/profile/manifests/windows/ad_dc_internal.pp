@@ -68,6 +68,6 @@ class profile::windows::ad_dc_internal(
       dsc_name => $applications_ou_name,
       dsc_path => $x500_domain_name,
       dsc_description => 'Location for application support objects',
-    }    
-  }   
+    }
+  }
 }

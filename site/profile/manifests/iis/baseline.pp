@@ -55,5 +55,4 @@ class profile::iis::baseline (
   file { $root_iis_path:
     ensure => 'directory',
   }
-  
 }

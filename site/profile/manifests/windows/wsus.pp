@@ -1,12 +1,8 @@
-class profile::windows::wsus 
-(
-  String $wsus_server = "wsus-server", 
-)
-
 # Puppet module for configuring a WSUS client on Windows Server 2012 R2
 # Sets up a custom fact from $modules/puppetconf_wsus called windows_updates
-
-{
+class profile::windows::wsus (
+  String $wsus_server = "wsus-server",
+) {
 
   file { 'C:\Windows\System32\WindowsPowerShell\v1.0\Modules\PSWindowsUpdate':
     ensure => directory,
@@ -24,5 +20,4 @@ class profile::windows::wsus
     scheduled_install_day  => "Tuesday",
     scheduled_install_hour => 2,
   }
-
 }

@@ -1,8 +1,8 @@
 class profile::nginx {
-  class { 'php': 
+  class { 'php':
     composer => false,
   }
-  class { 'nginx': 
+  class { 'nginx':
     names_hash_bucket_size => 128,
   }
 

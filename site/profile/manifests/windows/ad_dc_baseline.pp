@@ -14,14 +14,14 @@ class profile::windows::ad_dc_baseline() {
       dsc_path => $x500_domain_name,
       dsc_description => 'Location for user account objects',
     }
-    
+
     dsc_xadorganizationalunit { 'ad_dc_server_accounts_ou':
       ensure => present,
       dsc_name => 'Servers',
       dsc_path => $x500_domain_name,
       dsc_description => 'Location for server computer objects',
     }
-    
+
     dsc_xadorganizationalunit { 'ad_dc_workstation_accounts_ou':
       ensure => present,
       dsc_name => 'Workstations',
@@ -38,5 +38,4 @@ class profile::windows::ad_dc_baseline() {
       dsc_passwordhistorycount => 0, # 0 = don't keep track
     }
   }
-   
 }

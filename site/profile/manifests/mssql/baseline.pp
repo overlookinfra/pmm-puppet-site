@@ -61,7 +61,7 @@ class profile::mssql::baseline(
     admin_user       => 'sa',
     admin_pass       => $sa_password,
     admin_login_type => 'SQL_LOGIN',
-  }  
+  }
 
   # Setup sysadmin
   sqlserver::login{ $db_admin_group :
@@ -71,9 +71,9 @@ class profile::mssql::baseline(
   }
 
   # Set SQL Max Memory to 2GB
-  sqlserver_tsql{ 'Set Max Memory': 
-    instance => $dbinstance, 
-    command => "EXEC sp_configure'Show Advanced Options',1; RECONFIGURE; EXEC sp_configure'max server memory (MB)',$sqlmaxmem; RECONFIGURE;", 
+  sqlserver_tsql{ 'Set Max Memory':
+    instance => $dbinstance,
+    command => "EXEC sp_configure'Show Advanced Options',1; RECONFIGURE; EXEC sp_configure'max server memory (MB)',$sqlmaxmem; RECONFIGURE;",
     onlyif => "DECLARE @currentMem as int = 0;SET @currentMem = (SELECT CONVERT(int,value) as value FROM sys.configurations WHERE name = 'max server memory (MB)'); IF (@currentMem != $sqlmaxmem) THROW 50000, 'Memory needs to be set', 10"
   }
 

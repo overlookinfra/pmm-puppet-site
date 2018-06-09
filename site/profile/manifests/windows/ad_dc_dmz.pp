@@ -27,6 +27,6 @@ class profile::windows::ad_dc_dmz() {
     windows_ad::trust::external { 'internal.local':
       direction => 'outbound',
       require => Windows_ad::Dns::Conditional_forwarder['internal.local'],
-    }    
-  }   
+    }
+  }
 }

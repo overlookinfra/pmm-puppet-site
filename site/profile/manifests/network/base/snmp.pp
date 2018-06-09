@@ -18,5 +18,5 @@ class profile::network::base::snmp {
   cisco_snmp_user { 'v3test':
     ensure => present,
     groups => ['network-admin'],
-  } 
+  }
 }

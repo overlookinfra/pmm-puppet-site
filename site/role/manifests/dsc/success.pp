@@ -62,8 +62,8 @@ class role::dsc::success {
 
   # Turn RDP on and enable the firewall exclusion to get in
   dsc_xremotedesktopadmin { 'RemoteDesktopSettings':
-     dsc_ensure => 'Present',
-     dsc_userauthentication => 'NonSecure',
+    dsc_ensure             => 'Present',
+    dsc_userauthentication => 'NonSecure',
   } ->
   dsc_xFirewall { 'AllowRDP':
     dsc_name => 'DSC - Remote Desktop Admin Connections',

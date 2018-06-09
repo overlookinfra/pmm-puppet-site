@@ -38,12 +38,12 @@ class profile::mssql::cloudshop(
   }
 
   # Attach staged CloudShop Database if it doesn't already exist
-  sqlserver_tsql{ 'Create CloudShopDB': 
-    instance => $dbinstance, 
+  sqlserver_tsql{ 'Create CloudShopDB':
+    instance => $dbinstance,
     command  => "CREATE DATABASE [${dbname}] ON (FILENAME='${data_path}\\${mdf_file}'),(FILENAME='${data_path}\\${ldf_file}') FOR ATTACH",
     onlyif   => "DECLARE @currentDB as varchar(255); SET @currentDB = (SELECT [name] from sys.databases where [name] = '${dbname}'); IF (@currentDB IS NULL) THROW 50000, 'CloudShop is missing', 10;",
     require  => [ Acl["${data_path}\\${mdf_file}"], Acl["${data_path}\\${ldf_file}"] ],
-  }  
+  }
 
   # Create login for the Web Servers
   sqlserver::login{ 'cloudshop_login':
@@ -57,7 +57,7 @@ class profile::mssql::cloudshop(
     login    => 'cloudshop_login',
     database => $dbname,
     require  => [ Sqlserver::Login['cloudshop_login'], Sqlserver_tsql['Create CloudShopDB'] ],
-  }  
+  }
 
   # Create SQL Admin login
   sqlserver::login{ 'INTERNAL\CloudShopSQLAdmins':
@@ -70,7 +70,7 @@ class profile::mssql::cloudshop(
     login    => 'INTERNAL\CloudShopSQLAdmins',
     database => $dbname,
     require  => [ Sqlserver::Login['INTERNAL\CloudShopSQLAdmins'], Sqlserver_tsql['Create CloudShopDB'] ],
-  }  
+  }
 
   # SQL db_owners
   sqlserver::role { "${dbname}_db_owner":
@@ -80,6 +80,5 @@ class profile::mssql::cloudshop(
     role      => 'db_owner',
     members   => ['cloudshop_login_User','CloudShopSQLAdmins_User'],
     require  => [ Sqlserver::User["cloudshop_login_User"], Sqlserver::User["CloudShopSQLAdmins_User"] ],
-  }  
-  
+  }
 }

@@ -13,7 +13,7 @@ class profile::iis::cloudshop (
 
   $website_path = "${root_iis_path}/cloudshop"
   $website_path_win = regsubst($website_path, '/', '\\','G')
-  
+
   if ($dbinstance == 'MSSQLSERVER') {
     $dbdatasource = $dbserver
   } else {
@@ -35,7 +35,7 @@ class profile::iis::cloudshop (
     source    => $zip_file_local,
     creates   => "${website_path}\\Global.asax",
     require   => [ File[$website_path], Exec['DownloadCloudShopWeb'] ],
-  }  
+  }
 
   # BEGIN Web.config file
   # Strictly speaking this should be in a cloudshop module as a template file

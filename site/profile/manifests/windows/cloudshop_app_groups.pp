@@ -17,7 +17,7 @@ class profile::windows::cloudshop_app_groups(
       dsc_description => 'Location for CloudShop application support objects',
       require         => Dsc_xadorganizationalunit['ad_dc_applications_ou'],
     }
-    
+
     # Create the application groups
     dsc_xadgroup { 'CloudShopWebAdmins':
       dsc_ensure => 'present',
@@ -35,5 +35,5 @@ class profile::windows::cloudshop_app_groups(
       dsc_path => $x500_this_app_ou_name,
       require => Dsc_xadorganizationalunit['ad_dc_applications_cloudshop_ou'],
     }
-  }   
+  }
 }
