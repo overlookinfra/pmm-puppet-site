@@ -26,7 +26,7 @@ filebucket { 'main':
 # Make filebucket 'main' the default backup location for all File resources:
 File { backup => 'main' }
 
-Package { allow_virtual => 'false' }
+Package { allow_virtual => false }
 
 if $::osfamily == 'windows' {
   File {
