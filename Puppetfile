@@ -4,9 +4,6 @@
 # https://github.com/rodjek/librarian-puppet/blob/master/README.md
 # https://github.com/adrienthebo/r10k/blob/master/README.markdown
 #
-# Brief example:
-#
-#   mod 'puppetlabs/stdlib', '4.1.0'
 
 forge "https://forgeapi.puppetlabs.com"
 
